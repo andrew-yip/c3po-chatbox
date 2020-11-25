@@ -56,7 +56,7 @@ flutter:
      - lib/assets/flutter_logo.png
      - lib/assets/me.png
      - lib/assets/menu.png
-     - lib/assets/upbeat-grammar-295706-1120da60be87.json
+     - /Users/andrewyip/Desktop/upbeat-grammar-295706-1120da60be87.json
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

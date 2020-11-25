@@ -55,7 +55,7 @@ class SmallScreen extends StatelessWidget {
                 ),
                 Padding(
                   padding: const EdgeInsets.all(8.0),
-                  child: Text('click the chat icon below to start chatting'),
+                  child: Text('click the chat icon below to start chatting with c3po'),
                 ),
                 // EmailBox(),
                 SizedBox(

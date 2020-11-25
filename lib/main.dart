@@ -10,7 +10,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'chatbox app',
+      title: 'Chatbox Application',
       theme: MyAppThemes.AppThemeBlue(context), // theme of the material app file
 
       // onGenerateRoute method within material app

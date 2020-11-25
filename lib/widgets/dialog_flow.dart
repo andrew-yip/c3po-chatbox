@@ -26,7 +26,7 @@ class _FlutterFactsDialogFlowState extends State<FlutterFactsDialogFlow> {
               child: TextField(
                 controller: _textController, // the text field
                 onSubmitted: _submitQuery, // text is passed implisitly
-                decoration: InputDecoration.collapsed(hintText: "Send a message"),
+                decoration: InputDecoration.collapsed(hintText: "Send a message to C3PO"),
               ),
             ),
             Container( // for the send button
@@ -44,7 +44,7 @@ class _FlutterFactsDialogFlowState extends State<FlutterFactsDialogFlow> {
   void _dialogFlowResponse(query) async {
     _textController.clear(); // clears the text field
     AuthGoogle authGoogle = // does authentication
-    await AuthGoogle(fileJson: "lib/assets/upbeat-grammar-295706-1120da60be87.json").build();
+    await AuthGoogle(fileJson: "/Users/andrewyip/Desktop/upbeat-grammar-295706-1120da60be87.json").build();
     Dialogflow dialogFlow =
     Dialogflow(authGoogle: authGoogle, language: Language.english); //what you want response in
     AIResponse response = await dialogFlow.detectIntent(query); // gets text from api
@@ -77,23 +77,31 @@ class _FlutterFactsDialogFlowState extends State<FlutterFactsDialogFlow> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+
         centerTitle: true,
-        title: Text("conversation with c3po"),
+        title: Text("TALK TO C3PO"),
       ),
-      body: Column(children: <Widget>[
-        Flexible(
-            child: ListView.builder(
-              padding: EdgeInsets.all(8.0),
-              reverse: true, //To keep the latest messages at the bottom
-              itemBuilder: (_, int index) => _messages[index],
-              itemCount: _messages.length,
-            )),
-        Divider(height: 1.0),
-        Container(
-          decoration: new BoxDecoration(color: Theme.of(context).cardColor),
-          child: _queryInputWidget(context),
+      body: Container(
+        decoration: BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage("lib/assets/c3po.png")
+          )
         ),
-      ]),
+        child: Column(children: <Widget>[
+          Flexible(
+              child: ListView.builder(
+                padding: EdgeInsets.all(8.0),
+                reverse: true, //To keep the latest messages at the bottom
+                itemBuilder: (_, int index) => _messages[index],
+                itemCount: _messages.length,
+              )),
+          Divider(height: 1.0),
+          Container(
+            decoration: new BoxDecoration(color: Theme.of(context).cardColor),
+            child: _queryInputWidget(context),
+          ),
+        ]),
+      ),
     );
   }
 }
