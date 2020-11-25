@@ -1,6 +1,6 @@
 
 class Strings {
-  static const String appTitle = "chatbox app";
+  static const String appTitle = "C3PO chatbox";
   static const String logoTitle = "yip";
   static const String loginButton = "Login";
   static const String hello = "Hello!";
