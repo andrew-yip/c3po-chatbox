@@ -4,6 +4,8 @@ import 'package:andrewyip_dialogflowdemo/utils/strings.dart';
 import 'package:andrewyip_dialogflowdemo/utils/myColors.dart';
 import '../router.dart';
 import 'package:andrewyip_dialogflowdemo/utils/widgets_lib.dart';
+import 'package:url_launcher/url_launcher.dart';
+
 
 class SmallScreen extends StatelessWidget {
   @override
@@ -49,6 +51,22 @@ class SmallScreen extends StatelessWidget {
                 Padding(
                   padding: EdgeInsets.only(left: 12.0, top: 20),
                   child: Text(Strings.contact),
+                ),
+                SizedBox(
+                  height: 30,
+                ),
+                Center(
+                  child: RaisedButton(color: Colors.blue,
+                    onPressed: () async{
+                      const url = 'https://www.andrewayip.com';
+                      if (await canLaunch(url)) {
+                        await launch(url);
+                      } else {
+                        throw 'Could not launch $url';
+                      }
+                    },
+                    child: Text('checkout my website', style: TextStyle(fontSize: 22),),
+                  ),
                 ),
                 SizedBox(
                   height: 30,
